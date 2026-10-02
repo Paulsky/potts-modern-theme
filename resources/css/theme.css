@@ -4638,7 +4638,21 @@ body.potts-list-page main :is(.dataTables_filter, .dt-search) input {
   margin-inline-start: .45rem !important;
 }
 
-body.potts-list-page main :is(.paginate_button, .page-link, .dt-paging-button) {
+body.potts-list-page main :is(.dataTables_paginate, .dt-paging) .pagination {
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0 !important;
+}
+
+body.potts-list-page main :is(.dataTables_paginate, .dt-paging) .pagination > .page-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Bootstrap wraps each page-link in a page-item. Style only the control so
+   the wrapper does not add a second border, margin or circular background. */
+body.potts-list-page main :is(.paginate_button:not(.page-item), .page-link, button.dt-paging-button) {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -4652,7 +4666,7 @@ body.potts-list-page main :is(.paginate_button, .page-link, .dt-paging-button) {
   text-decoration: none !important;
 }
 
-body.potts-list-page main :is(.paginate_button.current, .page-item.active .page-link, .dt-paging-button.current) {
+body.potts-list-page main :is(.paginate_button.current:not(.page-item), .page-item.active .page-link, button.dt-paging-button.current) {
   border-color: var(--potts-blue) !important;
   background: var(--potts-blue) !important;
   color: #fff !important;
