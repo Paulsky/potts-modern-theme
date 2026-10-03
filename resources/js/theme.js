@@ -4330,7 +4330,7 @@
       const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
           const pane = mutation.target;
-          if (!Array.from(mutation.addedNodes).some(node => node instanceof Element)) {
+          if (!Array.from(mutation.addedNodes).some(node => node instanceof Element && !node.matches('.wt-icon-spinner'))) {
             return;
           }
 
