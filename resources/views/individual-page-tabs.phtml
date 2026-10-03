@@ -15,6 +15,11 @@ use Illuminate\Support\Collection;
 
 ?>
 
+<?php View::pushunique('styles') ?>
+<link rel="preload" href="<?= e(asset('js/vendor.min.js')) ?>" as="script">
+<link rel="preload" href="<?= e(asset('js/webtrees.min.js')) ?>" as="script">
+<?php View::endpushunique() ?>
+
 <style>
 /* Issue #31 test: on phones, flatten the Biography core wrapper into the
  * one-column grid. Keep the fallback portrait in normal document flow so it
